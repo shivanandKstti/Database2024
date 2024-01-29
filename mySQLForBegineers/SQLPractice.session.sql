@@ -65,14 +65,17 @@ CREATE TABLE animals
     name VARCHAR
     (50) NULL,
     species VARCHAR
-    (50) NULL
+    (50) NULL,
+    weight VARCHAR(100) NULL,
+    birthdate DATE,
+    email VARCHAR(200) NULL
 )
 
-INSERT INTO animals (name, species) 
+INSERT INTO animals (name, species, weight, birthdate, email) 
 VALUES
-('Purrsloud', 'cat'),
-('Barksalot', 'dog'),
-('Buddy', 'dog');
+('Purrsloud', 'cat', '12', 2013-03-10, 'Purrsloud@gmail.com'),
+('Barksalot', 'dog', '20', 2015-03-15, 'Barksalot@gmail.com'),
+('Buddy', 'dog', '52', 2010-10-25, 'Buddy@gmail.com');
 
 select * from animals
 
@@ -113,4 +116,40 @@ VALUES
 ('Shiva 30012024', 'Database', '9PM to 11PM', 4)
 
 select * from activityDetais
+
+use petfoods
+
+CREATE TABLE products(
+    id INT NOT null PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL,
+    priceusd DECIMAL(10,2) NOT NULL
+)
+
+SELECT * FROM products
+
+INSERT INTO products ( name, priceusd ) 
+VALUES
+('Celery', '11.11');
+
+--=============================================== Relationship between tables ======================================
+
+CREATE TABLE orders(
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    date DATETIME NOT NULL,
+    userid int NOT NULL
+)
+
+select * from orders
+
+INSERT INTO orders ( `date`, `userid` ) 
+VALUES
+(now(), 1),
+(now(), 2),
+(now(), 3)
+
+select * FROM orders
+
+select orders.date, animals.name, animals.email from orders
+JOIN animals on orders.userid = animals.id
+where animals.species = 'cat'
 
