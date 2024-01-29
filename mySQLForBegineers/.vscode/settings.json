@@ -1,0 +1,18 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 500,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "SQLPractice",
+            "database": "sqlpractice",
+            "username": "root",
+            "password": ""
+        }
+    ]
+}
