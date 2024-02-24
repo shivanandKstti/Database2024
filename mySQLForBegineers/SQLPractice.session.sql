@@ -153,3 +153,27 @@ select orders.date, animals.name, animals.email from orders
 JOIN animals on orders.userid = animals.id
 where animals.species = 'cat'
 
+
+--========== o2/24/2024 =======================================================================================
+what is database?
+- a collection of data stored in one place
+- can be accessed by multiple users at the same time
+- allows for easy retrieval and manipulation of data
+- a database system is a collection of software that manages databases
+database management system (DBMS):
+- provides an interface between users and databases
+- includes tools to create, manipulate, and retrieve data
+- includes security measures to protect data from unauthorized access
+
+types of databases:
+- relational databases: store data in tables with relationships between records
+- non-relational or NoSQL databases: store data in documents, key-value pairs, graphs, and column-oriented databases
+- document databases: store data in documents like JSON or XML
+- key-value stores: store data as key-value pairs, like a dictionary
+- columnar databases: organize data into columns, like a spreadsheet
+- graph databases: store data using nodes and edges, like a social network
+
+SQL stands for Structured Query Language. It is used to communicate with a DBMS and perform operations on the database.
+
+--=======================================================================================
+
